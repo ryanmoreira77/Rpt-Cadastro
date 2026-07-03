@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Clientes | Melting</title>
+  <style>
+    :root{--ink:#071827;--muted:#5d6b78;--line:#d4e1ea;--paper:#ffffff;--soft:#eef7fc;--accent:#0072bc;--accent-dark:#005288;--accent-soft:#e4f4fc;--accent-2:#00a6df;--ok:#22734a;--warn:#a06414;--error:#a63232;--focus:0 0 0 4px rgba(0,114,188,.16)}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(145deg,rgba(0,114,188,.12),transparent 34%),linear-gradient(315deg,rgba(0,166,223,.12),transparent 30%),#f6fbfe}.page{width:min(1180px,calc(100% - 32px));margin:0 auto;padding:28px 0}.shell{overflow:hidden;border:1px solid rgba(7,24,39,.12);border-radius:8px;background:rgba(255,255,255,.97);box-shadow:0 22px 60px rgba(7,38,62,.14)}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 24px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#ffffff,#edf8ff)}.brand{display:flex;align-items:center;gap:16px;min-width:0}.brand-logo{width:300px;height:auto;display:block}.brand-text{display:none}.chip{flex:0 0 auto;border:1px solid rgba(0,114,188,.22);border-radius:999px;padding:8px 12px;font-size:13px;color:var(--accent-dark);background:var(--accent-soft)}.content{display:grid;grid-template-columns:360px 1fr;min-height:620px}.lookup{padding:24px;border-right:1px solid var(--line);background:linear-gradient(180deg,#eef8ff,#f8fcff)}h1,h2,h3{letter-spacing:0}h1{margin:0;font-size:22px;line-height:1.18;font-weight:720;color:#062033}h2{margin:0;font-size:18px;line-height:1.2;font-weight:700;color:#062033}h3{margin:0 0 12px;font-size:14px;line-height:1.2;font-weight:760;text-transform:uppercase;color:#35586f}.lookup p,.panel-head p{margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.45}.search-box{margin-top:22px;display:grid;gap:10px}label{display:block;margin-bottom:6px;color:#35586f;font-size:12px;font-weight:680;text-transform:uppercase;letter-spacing:.04em}input,textarea{width:100%;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:var(--paper);font:inherit;font-size:14px;outline:none;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}input{height:42px;padding:0 12px}textarea{min-height:88px;padding:10px 12px;resize:vertical}input:focus,textarea:focus{border-color:var(--accent);box-shadow:var(--focus);background:#fff}.button-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}button,a.action{height:42px;border:1px solid transparent;border-radius:8px;padding:0 14px;font:inherit;font-size:14px;font-weight:680;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}button:hover,a.action:hover{transform:translateY(-1px)}button:disabled{cursor:wait;opacity:.72;transform:none}.primary{color:#fff;background:var(--accent);border-color:var(--accent);box-shadow:0 10px 18px rgba(0,114,188,.22)}.primary:hover{background:var(--accent-dark);border-color:var(--accent-dark)}.secondary{color:var(--accent-dark);background:#fff;border-color:#bdd5e6}.secondary:hover{background:#f3faff;border-color:var(--accent)}.ghost{height:auto;min-height:38px;color:var(--accent-dark);background:#fff;border-color:#bdd5e6}.ghost:hover{background:#f3faff;border-color:var(--accent)}.status{min-height:42px;margin-top:12px;padding:10px 12px;border-radius:8px;color:var(--muted);background:rgba(255,255,255,.76);font-size:13px;line-height:1.35;border:1px solid rgba(0,114,188,.08)}.status.ok{color:var(--ok);background:rgba(34,115,74,.09)}.status.warn{color:var(--warn);background:rgba(160,100,20,.10)}.status.error{color:var(--error);background:rgba(166,50,50,.09)}.source-list{margin-top:18px;display:grid;gap:8px}.source{padding:10px;border:1px solid rgba(0,114,188,.12);border-radius:8px;background:rgba(255,255,255,.70);font-size:13px;color:var(--muted)}.source strong{display:block;color:#062033;font-size:13px;margin-bottom:2px}.main{padding:24px;background:#fbfdff;display:grid;gap:18px}.panel{border:1px solid var(--line);border-radius:8px;background:#fff;padding:18px}.panel-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:16px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}.span-2{grid-column:1/-1}.field{min-width:0}.inline-field{display:flex;gap:8px}.inline-field input{flex:1 1 auto;min-width:0}.readonly{background:#f4f9fc}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:8px;background:#fff}table{width:100%;border-collapse:collapse;min-width:520px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;font-size:13px;vertical-align:top}th{color:#35586f;background:#f1f8fc;font-size:12px;text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:0}.empty{padding:12px;color:var(--muted);font-size:13px;background:#fff;border:1px dashed #bdd5e6;border-radius:8px}.actions{display:flex;justify-content:space-between;align-items:center;gap:12px}.hint{color:var(--muted);font-size:12px;line-height:1.35}.icon{width:17px;height:17px;flex:0 0 auto}.hidden{display:none!important}@media(max-width:920px){.page{width:min(100% - 20px,680px);padding:10px 0}.topbar{align-items:flex-start;padding:18px}.brand-logo{width:240px}.chip{display:none}.content{grid-template-columns:1fr}.lookup{border-right:0;border-bottom:1px solid var(--line);padding:20px}.main{padding:18px}.grid,.grid.three{grid-template-columns:1fr}.span-2{grid-column:auto}.panel-head,.actions{align-items:stretch;flex-direction:column}.button-row,.button-row button,.button-row a{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="shell" aria-label="Cadastro de clientes Melting">
+      <header class="topbar">
+        <div class="brand"><img class="brand-logo" src="data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20720%20190%22%20role%3D%22img%22%20aria-label%3D%22Melting%2070%20Anos%22%3E%0A%20%20%3Cdefs%3E%3Cstyle%3E.a%7Bfill%3A%230072bc%7D.b%7Bfill%3A%23009ee3%7D.w%7Bfont-family%3AArial%20Black%2CArial%2Csans-serif%3Bfont-weight%3A900%3Bletter-spacing%3A4px%7D.s%7Bfont-family%3AArial%2CHelvetica%2Csans-serif%3Bfont-weight%3A700%7D.c%7Bfont-family%3ASegoe%20Script%2CBrush%20Script%20MT%2Ccursive%3Bfont-style%3Aitalic%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%0A%20%20%3Cg%20transform%3D%22translate(8%2018)%22%3E%0A%20%20%20%20%3Cpath%20class%3D%22a%22%20d%3D%22M86%200c29%205%2054%2015%2073%2031%2010%208%2016%2022%2016%2039-38%200-75-3-110-13C37%2049%2019%2037%2011%2021%2028%209%2052%202%2086%200Z%22%2F%3E%0A%20%20%20%20%3Cpath%20class%3D%22a%22%20d%3D%22M12%2054c23%2027%2063%2042%20119%2046%2039%203%2082%201%20130-7%2017-3%2035%209%2041%2026%206%2016-3%2030-21%2032-70%209-136%2010-197%201-45-7-75-20-91-40-8-21-3-40%2019-58Z%22%2F%3E%0A%20%20%20%20%3Cpath%20class%3D%22a%22%20d%3D%22M0%20119c35%2028%2085%2045%20151%2051%2057%206%20119%203%20186-8%2015-3%2027%207%2028%2023%201%2015-8%2028-23%2034-74%2013-144%2014-209%203-52-9-90-25-114-50-12-17-18-35-19-53Z%22%2F%3E%0A%20%20%20%20%3Cpath%20class%3D%22b%22%20d%3D%22M343%2074c12%2014%207%2059-11%20104-17%2054-48%2099-92%20136-11%209-24%2015-37%2020-6%202-11-6-6-11%2043-38%2071-82%2087-132%2012-38%2017-78%2022-105%203-13%2027-21%2037-12Z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Ctext%20class%3D%22w%20a%22%20x%3D%22340%22%20y%3D%2282%22%20font-size%3D%2258%22%3EMELTING%3C%2Ftext%3E%0A%20%20%3Ctext%20class%3D%22s%20a%22%20x%3D%22345%22%20y%3D%22119%22%20font-size%3D%2219%22%3ESolu%C3%A7%C3%B5es%20em%20Manuten%C3%A7%C3%A3o%20Industrial%3C%2Ftext%3E%0A%20%20%3Ctext%20class%3D%22w%20a%22%20x%3D%22420%22%20y%3D%22188%22%20font-size%3D%2288%22%3E70%3C%2Ftext%3E%0A%20%20%3Ctext%20class%3D%22c%20a%22%20x%3D%22555%22%20y%3D%22173%22%20font-size%3D%2248%22%3EAnos%3C%2Ftext%3E%0A%3C%2Fsvg%3E" alt="Melting 70 Anos"><div class="brand-text"><p class="brand-name">Melting</p><p class="brand-subtitle">Cadastro completo de clientes</p></div></div>
+        <div class="chip">CNPJ + dados fiscais</div>
+      </header>
+      <div class="content">
+        <aside class="lookup">
+          <h1>Consultar cliente por CNPJ</h1>
+          <p>Busca em bases públicas, preenche o cadastro e mostra dados fiscais para conferência.</p>
+          <div class="search-box">
+            <div><label for="cnpjInput">CNPJ</label><input id="cnpjInput" type="text" inputmode="numeric" autocomplete="off" placeholder="00.000.000/0000-00" maxlength="18"></div>
+            <div class="button-row"><button class="primary" id="buscarBtn" type="button">Buscar dados</button><button class="secondary" id="limparBtn" type="button">Limpar</button></div>
+          </div>
+          <div id="buscaStatus" class="status" aria-live="polite">Pronto para consultar.</div>
+          <div class="source-list">
+            <div class="source"><strong>BrasilAPI</strong>Base principal para razão social, situação, CNAE e endereço.</div>
+            <div class="source"><strong>CNPJ.ws</strong>Fonte complementar para sócios, Simples, MEI e inscrições estaduais quando disponíveis.</div>
+            <div class="source"><strong>SEFAZ / IE</strong>Consulta oficial costuma exigir conferência manual por UF. Os atalhos ficam abaixo após a busca.</div>
+          </div>
+        </aside>
+        <section class="main">
+          <div class="panel">
+            <div class="panel-head"><div><h2>Dados cadastrais</h2><p>Revise antes de usar no cadastro interno.</p></div><div class="button-row"><button class="secondary" id="copiarBtn" type="button">Copiar resumo</button></div></div>
+            <div class="grid">
+              <div class="field span-2"><label for="fCliente">Razão social</label><input id="fCliente" type="text"></div>
+              <div class="field"><label for="fFantasia">Nome fantasia</label><input id="fFantasia" type="text"></div>
+              <div class="field"><label for="fCnpj">CNPJ</label><input id="fCnpj" type="text" class="readonly"></div>
+              <div class="field"><label for="fSituacao">Situação cadastral</label><input id="fSituacao" type="text"></div>
+              <div class="field"><label for="fAbertura">Abertura</label><input id="fAbertura" type="text"></div>
+              <div class="field"><label for="fPorte">Porte</label><input id="fPorte" type="text"></div>
+              <div class="field"><label for="fNatureza">Natureza jurídica</label><input id="fNatureza" type="text"></div>
+              <div class="field"><label for="fCapital">Capital social</label><input id="fCapital" type="text"></div>
+              <div class="field"><label for="fSimples">Simples / MEI</label><input id="fSimples" type="text"></div>
+              <div class="field"><label for="fTelefone">Telefone</label><input id="fTelefone" type="text"></div>
+              <div class="field"><label for="fEmail">E-mail</label><input id="fEmail" type="text"></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Endereço</h3>
+            <div class="grid three">
+              <div class="field span-2"><label for="fEndereco">Logradouro</label><input id="fEndereco" type="text"></div>
+              <div class="field"><label for="fNumero">Número</label><input id="fNumero" type="text"></div>
+              <div class="field"><label for="fComplemento">Complemento</label><input id="fComplemento" type="text"></div>
+              <div class="field"><label for="fBairro">Bairro</label><input id="fBairro" type="text"></div>
+              <div class="field"><label for="fCidade">Cidade / UF</label><input id="fCidade" type="text"></div>
+              <div class="field"><label for="fCep">CEP</label><input id="fCep" type="text"></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-head"><div><h2>Inscrição Estadual e SEFAZ</h2><p>A IE é preenchida quando a fonte pública retorna esse dado. Para confirmação oficial, use os atalhos.</p></div><div class="button-row"><a class="action ghost" id="linkCcc" href="https://dfe-portal.svrs.rs.gov.br/Nfe/Ccc" target="_blank" rel="noopener noreferrer">Abrir CCC/SEFAZ</a><a class="action ghost" href="https://www.consultaie.com.br/" target="_blank" rel="noopener noreferrer">ConsultaIE</a><a class="action ghost" href="http://www.sintegra.gov.br/" target="_blank" rel="noopener noreferrer">Sintegra</a></div></div>
+            <div class="grid"><div class="field"><label for="fIE">Inscrição estadual principal</label><input id="fIE" type="text" placeholder="Preencher/conferir na SEFAZ"></div><div class="field"><label for="fIeUf">UF da IE</label><input id="fIeUf" type="text"></div></div>
+            <div id="ieBox" class="empty" style="margin-top:14px">Nenhuma inscrição estadual carregada ainda.</div>
+          </div>
+          <div class="panel">
+            <h3>Atividade econômica</h3>
+            <div class="grid"><div class="field span-2"><label for="fCnaePrincipal">CNAE principal</label><input id="fCnaePrincipal" type="text"></div><div class="field span-2"><label for="fCnaesSecundarios">CNAEs secundários</label><textarea id="fCnaesSecundarios"></textarea></div></div>
+          </div>
+          <div class="panel"><h3>Quadro societário</h3><div id="sociosBox" class="empty">Nenhum sócio carregado ainda.</div></div>
+        </section>
+      </div>
+    </section>
+  </main>
+<script>
+(function(){
+  var cnpjInput=document.getElementById('cnpjInput'),buscarBtn=document.getElementById('buscarBtn'),statusEl=document.getElementById('buscaStatus');
+  var lastData=null;
+  function digits(v){return(v||'').replace(/\D/g,'')}
+  function formatCnpj(v){var c=digits(v).slice(0,14);if(c.length<=2)return c;if(c.length<=5)return c.slice(0,2)+'.'+c.slice(2);if(c.length<=8)return c.slice(0,2)+'.'+c.slice(2,5)+'.'+c.slice(5);if(c.length<=12)return c.slice(0,2)+'.'+c.slice(2,5)+'.'+c.slice(5,8)+'/'+c.slice(8);return c.slice(0,2)+'.'+c.slice(2,5)+'.'+c.slice(5,8)+'/'+c.slice(8,12)+'-'+c.slice(12)}
+  function validCnpj(cnpj){cnpj=digits(cnpj);if(cnpj.length!==14||/^(\d)\1+$/.test(cnpj))return false;var t=cnpj.length-2,d=cnpj.substring(0,t),dv=cnpj.substring(t),s=0,p=t-7;for(var i=t;i>=1;i--){s+=d.charAt(t-i)*p--;if(p<2)p=9}var r=s%11<2?0:11-s%11;if(r!=dv.charAt(0))return false;t=t+1;d=cnpj.substring(0,t);s=0;p=t-7;for(i=t;i>=1;i--){s+=d.charAt(t-i)*p--;if(p<2)p=9}r=s%11<2?0:11-s%11;return r==dv.charAt(1)}
+  function val(v){return v==null?'':String(v).trim()}function first(){for(var i=0;i<arguments.length;i++){var v=val(arguments[i]);if(v)return v}return''}
+  function money(v){var n=Number(String(v||'').replace(',','.'));return isFinite(n)&&n>0?n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}):''}
+  function dateBR(v){if(!v)return'';var s=String(v).slice(0,10);if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s.slice(8,10)+'/'+s.slice(5,7)+'/'+s.slice(0,4);return s}
+  function setStatus(msg,type){statusEl.textContent=msg;statusEl.className='status'+(type?' '+type:'')}function setLoading(on){buscarBtn.disabled=on;buscarBtn.textContent=on?'Buscando...':'Buscar dados'}
+  async function requestJson(url){var controller=new AbortController();var timer=setTimeout(function(){controller.abort()},12000);try{var r=await fetch(url,{signal:controller.signal,cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);return await r.json()}finally{clearTimeout(timer)}}
+  function set(id,v){var el=document.getElementById(id);if(el)el.value=val(v)}
+  function normalizeBrasil(d,cnpj){var cnae=d.cnae_fiscal_descricao?String(d.cnae_fiscal||'')+' - '+d.cnae_fiscal_descricao:'';return{cnpj:formatCnpj(cnpj),razao:val(d.razao_social),fantasia:val(d.nome_fantasia),situacao:first(d.descricao_situacao_cadastral,d.situacao_cadastral),abertura:dateBR(d.data_inicio_atividade),porte:val(d.porte),natureza:val(d.natureza_juridica),capital:money(d.capital_social),telefone:val(d.ddd_telefone_1),email:val(d.email),cep:val(d.cep),logradouro:val(d.logradouro),numero:val(d.numero),complemento:val(d.complemento),bairro:val(d.bairro),cidade:[val(d.municipio),val(d.uf)].filter(Boolean).join(' - '),uf:val(d.uf),cnaePrincipal:cnae,cnaesSecundarios:(d.cnaes_secundarios||[]).map(function(x){return [x.codigo,x.descricao].filter(Boolean).join(' - ')}),fonteBrasil:true}}
+  function normalizeCnpjWs(d,cnpj){var e=d.estabelecimento||{};var tel=e.ddd1&&e.telefone1?'('+e.ddd1+') '+e.telefone1:val(e.telefone1);var ies=(e.inscricoes_estaduais||[]).map(function(x){return{ie:first(x.inscricao_estadual,x.inscricao),uf:first(x.estado&&x.estado.sigla,x.uf),ativo:first(x.ativo===true?'Ativa':x.ativo===false?'Inativa':'',x.situacao)}}).filter(function(x){return x.ie||x.uf});var socios=(d.socios||[]).map(function(s){return{nome:first(s.nome,s.razao_social),qualificacao:first(s.qualificacao_socio&&s.qualificacao_socio.descricao,s.qualificacao),entrada:dateBR(s.data_entrada),documento:first(s.cpf_cnpj_socio,s.cnpj_cpf_do_socio)}});var simples=d.simples?('Simples: '+(d.simples.simples?'Sim':'Não')+' | MEI: '+(d.simples.mei?'Sim':'Não')):'';return{cnpj:formatCnpj(cnpj),razao:val(d.razao_social),fantasia:val(e.nome_fantasia),situacao:first(e.situacao_cadastral,e.situacao_cadastral_id),abertura:dateBR(e.data_inicio_atividade),porte:d.porte?val(d.porte.descricao):'',natureza:d.natureza_juridica?val(d.natureza_juridica.descricao):'',capital:money(d.capital_social),telefone:tel,email:val(e.email),cep:val(e.cep),logradouro:[val(e.tipo_logradouro),val(e.logradouro)].filter(Boolean).join(' '),numero:val(e.numero),complemento:val(e.complemento),bairro:val(e.bairro),cidade:e.cidade?[val(e.cidade.nome),e.estado?val(e.estado.sigla):''].filter(Boolean).join(' - '):'',uf:e.estado?val(e.estado.sigla):'',cnaePrincipal:e.atividade_principal?[val(e.atividade_principal.id),val(e.atividade_principal.descricao)].filter(Boolean).join(' - '):'',cnaesSecundarios:(e.atividades_secundarias||[]).map(function(x){return [x.id,x.descricao].filter(Boolean).join(' - ')}),ies:ies,socios:socios,simples:simples,fonteCnpjWs:true}}
+  function merge(a,b){var r={};[a||{},b||{}].forEach(function(o){Object.keys(o).forEach(function(k){if(Array.isArray(o[k])){r[k]=(r[k]||[]).concat(o[k])}else if(!r[k]&&o[k])r[k]=o[k];else if(k.indexOf('fonte')===0&&o[k])r[k]=true})});if(r.cnaesSecundarios)r.cnaesSecundarios=Array.from(new Set(r.cnaesSecundarios.filter(Boolean)));return r}
+  function renderTable(boxId,items,cols,empty){var box=document.getElementById(boxId);if(!items||!items.length){box.className='empty';box.textContent=empty;return}var html='<div class="table-wrap"><table><thead><tr>'+cols.map(function(c){return'<th>'+c.label+'</th>'}).join('')+'</tr></thead><tbody>'+items.map(function(item){return'<tr>'+cols.map(function(c){return'<td>'+escapeHtml(item[c.key]||'')+'</td>'}).join('')+'</tr>'}).join('')+'</tbody></table></div>';box.className='';box.innerHTML=html}
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]})}
+  function preencher(d){lastData=d;set('fCliente',d.razao);set('fFantasia',d.fantasia);set('fCnpj',d.cnpj);set('fSituacao',d.situacao);set('fAbertura',d.abertura);set('fPorte',d.porte);set('fNatureza',d.natureza);set('fCapital',d.capital);set('fSimples',d.simples);set('fTelefone',d.telefone);set('fEmail',d.email);set('fCep',d.cep);set('fEndereco',d.logradouro);set('fNumero',d.numero);set('fComplemento',d.complemento);set('fBairro',d.bairro);set('fCidade',d.cidade);set('fCnaePrincipal',d.cnaePrincipal);set('fCnaesSecundarios',(d.cnaesSecundarios||[]).join('\n'));var ie=(d.ies||[])[0]||{};set('fIE',ie.ie||'');set('fIeUf',ie.uf||d.uf||'');renderTable('ieBox',d.ies,[{key:'ie',label:'Inscrição estadual'},{key:'uf',label:'UF'},{key:'ativo',label:'Situação'}],'Nenhuma inscrição estadual retornada pelas bases públicas. Confira nos atalhos da SEFAZ.');renderTable('sociosBox',d.socios,[{key:'nome',label:'Nome'},{key:'qualificacao',label:'Qualificação'},{key:'entrada',label:'Entrada'},{key:'documento',label:'Documento'}],'Nenhum sócio retornado pelas bases públicas.')}
+  async function buscar(){
+    var cnpj=digits(cnpjInput.value);
+    if(!validCnpj(cnpj)){setStatus('CNPJ inválido. Confira os 14 números digitados.','error');cnpjInput.focus();return}
+    setLoading(true);
+    setStatus(location.protocol.indexOf('http')===0?'Consultando fontes fiscais pelo servidor local...':'Consultando em modo arquivo. Para dados completos, abra pelo localhost.','');
+    var brasil=null,ws=null,erros=[];
+    if(location.protocol.indexOf('http')===0){
+      try{
+        var pacote=await requestJson('/api/cnpj/'+cnpj);
+        if(pacote.brasil)brasil=normalizeBrasil(pacote.brasil,cnpj);
+        if(pacote.cnpjws)ws=normalizeCnpjWs(pacote.cnpjws,cnpj);
+        erros=(pacote.errors||[]).map(function(x){return x.source});
+      }catch(e){erros.push('servidor local')}
+    }else{
+      try{brasil=normalizeBrasil(await requestJson('https://brasilapi.com.br/api/cnpj/v1/'+cnpj),cnpj)}catch(e){erros.push('BrasilAPI')}
+      try{ws=normalizeCnpjWs(await requestJson('https://publica.cnpj.ws/cnpj/'+cnpj),cnpj)}catch(e){erros.push('CNPJ.ws')}
+    }
+    var data=merge(brasil,ws);
+    if(data.razao||data.fantasia){
+      preencher(data);
+      var fontes=[data.fonteBrasil?'BrasilAPI':'',data.fonteCnpjWs?'CNPJ.ws':''].filter(Boolean).join(' + ');
+      var msg='Dados carregados por '+fontes+'.';
+      if(erros.length)msg+=' Atenção: '+erros.join(' e ')+' não respondeu ou bloqueou a consulta.';
+      if(!(data.ies&&data.ies.length))msg+=' IE não veio nas bases públicas; confira na SEFAZ.';
+      setStatus(msg,erros.length||!(data.ies&&data.ies.length)?'warn':'ok')
+    }else{
+      setStatus(location.protocol.indexOf('http')===0?'Não consegui consultar esse CNPJ agora. Verifique a conexão ou tente novamente.':'O navegador bloqueou parte das fontes no modo arquivo. Abra pelo link localhost para consulta completa.','error')
+    }
+    setLoading(false)
+  }
+  function limpar(){document.querySelectorAll('input,textarea').forEach(function(el){el.value=''});document.getElementById('ieBox').className='empty';document.getElementById('ieBox').textContent='Nenhuma inscrição estadual carregada ainda.';document.getElementById('sociosBox').className='empty';document.getElementById('sociosBox').textContent='Nenhum sócio carregado ainda.';lastData=null;setStatus('Pronto para consultar.','');cnpjInput.focus()}
+  async function copiar(){var linhas=['Razão social: '+document.getElementById('fCliente').value,'Nome fantasia: '+document.getElementById('fFantasia').value,'CNPJ: '+document.getElementById('fCnpj').value,'IE: '+document.getElementById('fIE').value,'Situação: '+document.getElementById('fSituacao').value,'Telefone: '+document.getElementById('fTelefone').value,'E-mail: '+document.getElementById('fEmail').value,'Endereço: '+[document.getElementById('fEndereco').value,document.getElementById('fNumero').value,document.getElementById('fBairro').value,document.getElementById('fCidade').value,document.getElementById('fCep').value].filter(Boolean).join(', ')];try{await navigator.clipboard.writeText(linhas.filter(function(l){return !/: $/.test(l)}).join('\n'));setStatus('Resumo copiado para a área de transferência.','ok')}catch(e){setStatus('Não foi possível copiar automaticamente. Selecione os campos e copie manualmente.','warn')}}
+  cnpjInput.addEventListener('input',function(e){e.target.value=formatCnpj(e.target.value)});cnpjInput.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();buscar()}});buscarBtn.addEventListener('click',buscar);document.getElementById('limparBtn').addEventListener('click',limpar);document.getElementById('copiarBtn').addEventListener('click',copiar);
+})();
+</script>
+</body>
+</html>
